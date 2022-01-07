@@ -1,0 +1,544 @@
+{% load static %}
+<! DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Steak-House Multipurpose HTML-5 Template | Homepage 01</title>
+    <!-- Stylesheets -->
+    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet">
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+    <link href="{% static 'css/responsive.css'%}" rel="stylesheet">
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&amp;family=Overpass:wght@100;200;300;400;600;700;800;900&amp;family=Playfair+Display:wght@400;500;600;700;800;900&amp;display=swap"
+            rel="stylesheet">
+
+    <link rel="shortcut icon" href="{% static 'images/favicon.png'%}" type="image/x-icon">
+    <link rel="icon" href="{% static 'images/favicon.png'%}" type="image/x-icon">
+
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+
+</head>
+
+<body class="hidden-bar-wrapper">
+
+<div class="page-wrapper">
+
+    <!-- Preloader -->
+    <div class="preloader"></div>
+
+    <!-- Main Header-->
+    <header class="main-header">
+
+        <!-- Header Upper -->
+        <div class="header-upper">
+            <div class="outer-container clearfix">
+
+                <div class="pull-left logo-box">
+                    <div class="logo"><a href="{% url 'home'%}"><img src="{% static 'images/logo.png'%}" alt="" title=""></a>
+                    </div>
+                </div>
+
+                <div class="nav-outer clearfix">
+                    <!--Mobile Navigation Toggler-->
+                    <div class="mobile-nav-toggler"><span class="icon flaticon-menu"></span></div>
+                    <!-- Main Menu -->
+                    <nav class="main-menu navbar-expand-md">
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+
+                        <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
+                            <ul class="navigation clearfix">
+                                <li class="current"><a href="{% url 'home'%}">Home</a>
+                                </li>
+                                <li class="dropdown"><a href="#">Menu</a>
+                                    <ul>
+                                        {% for rs in category %}
+                                        <li><a href="{% url 'category_product' rs.id rs.slug %}">{{ rs.title }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                                <li><a href="{% url 'blog'%}">Blog</a>
+                                </li>
+                                <li><a href="{% url 'aboutus' %}">About</a>
+                                </li>
+                                <li><a href="{% url 'cheff'%}">Cheff</a>
+                                </li>
+                                <li><a href="{% url 'contactus'%}">Contact us</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!--End Header Upper-->
+
+        <!-- Sticky Header  -->
+        <div class="sticky-header">
+            <div class="auto-container clearfix">
+                <!--Logo-->
+                <div class="logo pull-left">
+                    <a href="{% url 'home'%}" title=""><img src="{% static 'images/logo-small.png'%}" alt=""
+                                                            title=""></a>
+                </div>
+                <!--Right Col-->
+                <div class="pull-right">
+                    <!-- Main Menu -->
+                    <nav class="main-menu">
+                        <!--Keep This Empty / Menu will come through Javascript-->
+                    </nav><!-- Main Menu End-->
+                </div>
+            </div>
+        </div><!-- End Sticky Menu -->
+
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+            <div class="menu-backdrop"></div>
+            <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
+
+            <nav class="menu-box">
+                <div class="nav-logo"><a href="{% url 'home'%}"><img src="{% static 'images/logo-small.png'%}" alt=""
+                                                                     title=""></a></div>
+                <div class="menu-outer">
+                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                </div>
+            </nav>
+        </div><!-- End Mobile Menu -->
+
+    </header>
+    <!-- End Main Header -->
+
+    <!-- Banner Section -->
+    <section class="banner-section">
+        <div class="main-slider-carousel owl-carousel owl-theme">
+
+            <div class="slide" style="background-image: url({% static 'images/main-slider/image-1.jpg'%})">
+                <div class="pattern-layer"
+                     style="background-image: url({% static 'images/main-slider/pattern-layer.png'%})"></div>
+                <div class="auto-container">
+                    <!-- Content Column -->
+                    <div class="content-boxed">
+                        <div class="inner-box">
+                            <div class="title">SteakHouse</div>
+                            <div class="icon"><img src="{% static 'images/main-slider/icon-1.png'%}" alt=""/></div>
+                            <h1>Chilli Beef Ribs</h1>
+                            <div class="text">To Cyyo Steakhouse</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide" style="background-image: url({% static 'images/main-slider/image-2.jpg'%})">
+                <div class="pattern-layer"
+                     style="background-image: url({% static 'images/main-slider/pattern-layer.png'%})"></div>
+                <div class="auto-container">
+                    <!-- Content Column -->
+                    <div class="content-boxed">
+                        <div class="inner-box">
+                            <div class="title">SteakHouse</div>
+                            <div class="icon"><img src="{% static 'images/main-slider/icon-1.png'%}" alt=""/></div>
+                            <h1>Chilli Beef Ribs</h1>
+                            <div class="text">To Cyyo Steakhouse</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide" style="background-image: url({% static 'images/main-slider/image-3.jpg'%})">
+                <div class="pattern-layer"
+                     style="background-image: url({% static 'images/main-slider/pattern-layer.png'%})"></div>
+                <div class="auto-container">
+                    <!-- Content Column -->
+                    <div class="content-boxed">
+                        <div class="inner-box">
+                            <div class="title">SteakHouse</div>
+                            <div class="icon"><img src="{% static 'images/main-slider/icon-1.png'%}" alt=""/></div>
+                            <h1>Chilli Beef Ribs</h1>
+                            <div class="text">To Cyyo Steakhouse</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End Banner Section -->
+
+    <!-- Order Section -->
+    <section class="order-section" style="background-image: url({% static 'images/background/pattern-1.png'%})">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <!-- Content Column -->
+                {% for rs in product_all1 %}
+                <div class="content-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="inner-column">
+                        <div class="icon"><img src="{% static 'images/icons/order-icon.png'%}" alt=""/></div>
+                        <div class="sec-title light">
+                            <h2>Best Steck House <br> {{ rs.title }} <span>{{ rs.price }} sum</span></h2>
+                            <div class="text"> {{rs.description }} </div>
+                        </div>
+                        <div class="btn-box">
+                            <a href="{% url 'product_detail' rs.id rs.slug %}" class="btn-style-one theme-btn"><span class="txt">Order now</span></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Image Column -->
+                <div class="image-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="inner-column">
+                        <div class="image titlt" data-tilt data-tilt-max="3">
+                            <a href="{% url 'product_detail' rs.id rs.slug %}"><img src="{{ rs.image.url }}" alt=""/></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <!-- End Order Section -->
+
+    <!-- Production Section -->
+    <section class="production-section" style="background-image: url({% static 'images/background/1.jpg'%})">
+        <div class="auto-container">
+            <!-- Sec Title -->
+            <div class="sec-title light centered">
+                <h2>Category</h2>
+            </div>
+            <!-- End Sec Title -->
+            <div class="products-carousel owl-carousel owl-theme">
+
+                <!-- Product Block -->
+                {% for rs in category %}
+                <div class="product-block">
+                    <div class="inner-box">
+                        <div class="title-box">
+                            <h3><a href="{% url 'category_product' rs.id rs.slug %}">{{ rs.title }}</a></h3>
+                        </div>
+                        <div class="lower-content">
+                            <div class="product-image">
+                                <img src="{{ rs.image.url }}" alt="" class="img-responsive">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+            </div>
+        </div>
+    </section>
+    <!-- End Production Section -->
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="auto-container">
+            <div class="inner-container">
+                <div class="icon-layer-one" style="background-image: url({% static 'images/icons/icon-1.png'%})"></div>
+                <div class="icon-layer-two" style="background-image: url({% static 'images/icons/icon-2.png'%})"></div>
+                <div class="icon-layer-three"
+                     style="background-image: url({% static 'images/icons/icon-3.png'%})"></div>
+                <div class="pattern-layer" style="background-image: url({% static 'images/background/pattern-2.png'%})">
+                </div>
+                <!-- Title Box -->
+                <div class="title-box">
+                    <div class="title">Rustic</div>
+                    <h2>INTERIOR</h2>
+                    <h4>Beef ageing on site, six tonnes of it Steaks cut every day <br> and on request</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End CTA Section -->
+
+    <!-- Menu Section -->
+    <section class="menu-section">
+        <div class="pattern-layer" style="background-image: url({% static 'images/background/pattern-3.png'%})"></div>
+        <div class="pattern-layer-two" style="background-image: url({% static 'images/background/pattern-4.png'%})">
+        </div>
+        <div class="auto-container">
+            <!-- Sec Title -->
+            <div class="sec-title centered">
+                <h2>Our Menu</h2>
+                <div class="text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</div>
+            </div>
+
+            <!-- Menu Tabs -->
+            <div class="menu-tab">
+
+                <!-- Tabs Content -->
+                <div class="p-tabs-content">
+
+                    <!-- Menu Tab / Active Tab -->
+                    <div class="p-tab active-tab" id="p-tab-1">
+                        <div class="menu-carousel owl-theme owl-carousel">
+
+                            <!-- Menu Block -->
+                            {% for rs in product_slayder%}
+                            <div class="menu-block">
+                                <div class="inner-box">
+                                    <div class="image-outer">
+                                        <div class="image">
+                                            <a href="{% url 'product_detail' rs.id rs.slug %}"><img
+                                                    src="{{ rs.image.url }}" alt=""/></a>
+                                        </div>
+                                    </div>
+                                    <div class="lower-content">
+                                        <h4><a href="{% url 'product_detail' rs.id rs.slug %}">{{ rs.title }}</a></h4>
+
+                                        <div class="price">{{ rs.price }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Menu Section -->
+
+    <!-- Experiance Section -->
+    <section class="experiance-section" style="background-image: url({% static 'images/background/2.jpg'%})">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <!-- Content Column -->
+                <div class="content-column col-lg-7 col-md-12 col-sm-12">
+                    <div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms"
+                         style="background-image: url({% static 'images/background/pattern-5.png'%})">
+                        <h3>Enjoy An Authentic British Dining Experience</h3>
+                        <div class="text">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur.
+                            Excepteur sint occaecat cupidatat non proident,sunt in culpa qui officia deserunt mollit
+                        </div>
+                        <div class="styled-text">We cater for all sized functions, ideal for your larger functions or an
+                            intimate gathering, our team can curate a menu to suit your taste.
+                        </div>
+                        <a href="{% url 'blog'%}" class="btn-style-three theme-btn"><span class="txt"> Read More</span></a>
+                        <div class="price-box">
+                            Best Smoked <br> Meats
+                        </div>
+                    </div>
+                </div>
+                <!-- Image Column -->
+                <div class="image-column col-lg-5 col-md-12 col-sm-12">
+                    <div class="inner-column">
+                        <h2>SteakHouse</h2>
+                        <div class="image titlt" data-tilt data-tilt-max="3">
+                            <img src="{% static 'images/resource/experiance.png'%}" alt=""/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Experiance Section -->
+
+    <!-- Team Section -->
+    <section class="team-section" style="background-image: url({% static 'images/background/pattern-1.png'%})">
+        <div class="auto-container">
+            <!-- Sec Title -->
+            <div class="sec-title light centered">
+                <h2>Our Awesome Team</h2>
+            </div>
+            <div class="row clearfix">
+
+                <!-- Team Block -->
+                {% for rs in chef %}
+                <div class="team-block col-lg-3 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="image">
+                            <div class="color-layer"></div>
+                            <a href="{% url 'cheff_detail' rs.id %}"><img src="{{ rs.image.url}}" alt=""/></a>
+                            <div class="overlay-box">
+                                <div class="overlay-inner">
+                                    <div class="content">
+                                        <h5><a href="{% url 'cheff_detail' rs.id %}">{{ rs.title }}</a></h5>
+                                        <div class="designation">Main Chef</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- End Team Section -->
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section" style="background-image: url({% static 'images/background/3.jpg'%})">
+        <div class="auto-container">
+            <!-- Sec Title -->
+            <div class="title-box">
+                <div class="title">CUSTOMER’S REVIEWS</div>
+                <h3>Engage your customers.</h3>
+            </div>
+            <div class="single-item-carousel owl-carousel owl-theme">
+
+                <!-- Testimonial Block -->
+                {% for rs in blog %}
+                <div class="testimonial-block">
+                    <div class="inner-box">
+                        <div class="image">
+                            <img src="{{ rs.image.url }}" alt=""/>
+                        </div>
+                        <div class="author">
+                            <h3>{{ rs.title }}</h3>
+                        </div>
+                        <a href="{% url 'blog_detail' rs.id %}" class="btn1 stl2">read more</a>
+                        <ul class="blog-info-nav">
+                            <li><a href="#"><i class="flaticon-calendar"></i>{{ rs.create_at }}</a></li>
+                        </ul>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- End Testimonial Block -->
+
+            </div>
+        </div>
+    </section>
+    <!-- End Testimonial Section -->
+
+    <!-- News Section -->
+    <section class="news-section" style="background-image: url({% static 'images/background/pattern-1.png'%})">
+        <div class="auto-container">
+            <!-- Sec Title -->
+            <div class="sec-title light centered">
+                <h2>Latest News</h2>
+                <div class="text">Excepteur sint occaecat cupidatat non proident, sunt in culpa</div>
+            </div>
+            <div class="row clearfix">
+
+                <!-- News Block -->
+                {% for rs in product_all %}
+                <div class="news-block col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        <div class="image">
+                            <div class="color-layer"></div>
+                            <img src="{{ rs.image.url}}" alt=""/>
+                            <div class="overlay-box">
+                                <div class="overlay-inner">
+                                    <h4><a href="{% url 'product_detail' rs.id rs.slug %}">{{ rs.title}}</a></h4>
+                                    <div class="text">{{ rs.description}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+    <!-- End News Section -->
+
+    <footer class="main-footer" style="background-image: url({% static 'images/background/4.jpg'%})">
+        <div class="auto-container">
+            <!-- Widgets Section -->
+            <div class="widgets-section" style="background-image: url({% static 'images/background/pattern-9.png'%})">
+                <div class="row clearfix">
+
+                    <!-- Footer Column -->
+                    <div class="footer-column col-lg-3 col-md-6 col-sm-12">
+                        <div class="footer-widget logo-widget">
+                            <div class="logo">
+                                <a href="{% url 'home'%}"><img src="{% static 'images/footer-logo.png' %}" alt=""/></a>
+                            </div>
+                            <div class="text">Sebastian and Tony Lazzara221 <br> W 38th St New York, NY 10018</div>
+                            <a class="phone-number" href="tel:+212-924-7778">+(212) 924-7778</a>
+                        </div>
+                    </div>
+
+                    <!-- Footer Column -->
+                    <div class="footer-column col-lg-6 col-md-6 col-sm-12">
+                        <div class="footer-widget centered-widget">
+                            <div class="big-logo">
+                                <a href="{% url 'home'%}"><img src="{% static 'images/footer-logo-2.png'%}" alt=""/></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Footer Column -->
+                    <div class="footer-column col-lg-3 col-md-6 col-sm-12">
+                        <!-- Timing -->
+                        <ul class="timing">
+                            <span>Opening Hours</span>
+                            <li>Friday: 09:00 – 23:00h</li>
+                            <li>Saturday: 09:00 – 16:00h</li>
+                            <li>Sunday: 12:00 – 18:00h</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Footer Bottom -->
+                <div class="footer-bottom">
+                    <div class="clearfix">
+                        <div class="pull-left">
+                            <div class="cards"><img src="{% static 'images/icons/cards.png'%}" alt=""/></div>
+                        </div>
+                        <div class="pull-right">
+                            <div class="copyright">Copyright &copy;2020 <a href="#">All rights reserved</a></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+</div>
+<!--End pagewrapper-->
+
+<!-- Search Popup -->
+<div class="search-popup">
+    <button class="close-search style-two"><span class="flaticon-multiply"></span></button>
+    <button class="close-search"><span class="flaticon-multiply"></span></button>
+    <form method="post" action="https://gico.io/cyyo/02_Steakhouse/blog.html">
+        <div class="form-group">
+            <input type="search" name="search-field" value="" placeholder="Search Here" required="">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+    </form>
+</div>
+<!-- End Header Search -->
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-up"></span></div>
+
+<script src="{% static 'js/jquery.js'%}"></script>
+<script src="{% static 'js/popper.min.js'%}"></script>
+<script src="{% static 'js/bootstrap.min.js'%}"></script>
+<script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js'%}"></script>
+<script src="{% static 'js/jquery.fancybox.js'%}"></script>
+<script src="{% static 'js/appear.js'%}"></script>
+<script src="{% static 'js/parallax.min.js'%}"></script>
+<script src="{% static 'js/tilt.jquery.min.js'%}"></script>
+<script src="{% static 'js/jquery.paroller.min.js'%}"></script>
+<script src="{% static 'js/owl.js'%}"></script>
+<script src="{% static 'js/wow.js'%}"></script>
+<script src="{% static 'js/nav-tool.js'%}"></script>
+<script src="{% static 'js/jquery-ui.js'%}"></script>
+<script src="{% static 'js/script.js'%}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+<script src="{% static 'js/respond.js'%}"></script>
+</body>
+
+</html>
